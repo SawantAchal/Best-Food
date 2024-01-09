@@ -1,6 +1,14 @@
 import React, { useState } from 'react'
 import { FaHamburger } from "react-icons/fa";
 import { IoCloseSharp } from "react-icons/io5";
+import { FaTruckFast } from "react-icons/fa6"
+import { MdOutlineFavorite } from "react-icons/md";
+import { FaWallet } from "react-icons/fa6";
+import { IoIosHelpCircle } from "react-icons/io";
+import { IoMdPricetag } from "react-icons/io";
+import { TbSquareArrowDownFilled } from "react-icons/tb";
+import { FaUserFriends } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 
 const Navbar = () => {
     const [nav , setNav] = useState(false)
@@ -10,14 +18,14 @@ const Navbar = () => {
             <section className='cursor-pointer' onClick={() => setNav(!nav)}>
                 <FaHamburger size={30} />
             </section>
-            <h1 className='text-2xl sm:text-3xl lg:text-4 px-2 '>Best <span className='font-bold'>Eats</span></h1>
-            <section className='hidden lg:flex items-center bg-gray-200 rounded-full p-1 text-[14px]'>
+            <h1 className='text-2xl sm:text-3xl lg:text-4 px-2 font-bold'>Best <span className='font-bold text-orange-600'>Eats</span></h1>
+            {/* <section className='hidden lg:flex items-center bg-gray-200 rounded-full p-1 text-[14px]'>
                 <p className='bg-black text-white rounded-full p-2'>Delivery</p>
                 <p className='p-2'>Pickup</p>
-            </section>
+            </section> */}
         </section>
-        <section className='bg-gray-200 rounded-full flex items-centerp px-2 '>
-            <icon size={20}/>
+        <section className='bg-gray-200 rounded-full w-[65%] flex items-centerp px-2 '>
+            <FaSearch size={20} className='text-center m-2 font-bold text-3xl pt-1'/>
             <input type='text ' placeholder='search food' className='bg-transparent p-2 w-full focus:outline-none'/>
         </section>
         <button className='bg-black text-white hidden md:flex items-center py-2 rounded-full'>
@@ -32,13 +40,13 @@ const Navbar = () => {
             
             <nav>
                 <ul className='flex flex-col p-4 text-gray-800'>
-                    <li className='text-xl p-4 flex'><icon size={25} className='mr-4'/>Orders</li>
-                    <li className='text-xl p-4 flex'><icon size={25} className='mr-4'/>Orders</li>
-                    <li className='text-xl p-4 flex'><icon size={25} className='mr-4'/>Orders</li>
-                    <li className='text-xl p-4 flex'><icon size={25} className='mr-4'/>Orders</li>
-                    <li className='text-xl p-4 flex'><icon size={25} className='mr-4'/>Orders</li>
-                    <li className='text-xl p-4 flex'><icon size={25} className='mr-4'/>Orders</li>
-                    <li className='text-xl p-4 flex'><icon size={25} className='mr-4'/>Orders</li>
+                    <li className='text-xl p-4 flex'><FaTruckFast size={25} className='mr-4'/>Orders</li>
+                    <li className='text-xl p-4 flex'><MdOutlineFavorite size={25} className='mr-4'/>Favorites</li>
+                    <li className='text-xl p-4 flex'><FaWallet size={25} className='mr-4'/>Wallet</li>
+                    <li className='text-xl p-4 flex'><IoIosHelpCircle size={25} className='mr-4'/>Help</li>
+                    <li className='text-xl p-4 flex'><IoMdPricetag size={25} className='mr-4'/>Promotions</li>
+                    <li className='text-xl p-4 flex'><TbSquareArrowDownFilled size={25} className='mr-4'/>Best One</li>
+                    <li className='text-xl p-4 flex'><FaUserFriends size={25} className='mr-4'/>Invite Friends</li>
                 </ul>
             </nav>
             </section>
