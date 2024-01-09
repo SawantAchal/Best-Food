@@ -85,14 +85,14 @@ const Food = () => {
             <section>
                 <p className='font-bold text-gray-700'>Filter price range</p>
                 <section className='flex justify-between max-w-[390px] w-full'>
-                    <input type='number' placeholder='Min Price' value={minPrice} onChange={(e) => setMinPrice(e.target.value)} className='border-orange-600 text-orange-600  p-1 w-1/2' />
+                    <input className=' p-1 w-1/2  ' type='number' placeholder='Min Price' value={minPrice} onChange={(e) => setMinPrice(e.target.value)}  />
                     <input type='number' placeholder='Max Price' value={maxPrice} onChange={(e) => setMaxPrice(e.target.value)} className='border-orange-600 p-1 w-1/2' />
                     <button onClick={filterPriceRange} className='border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white m-1'>Apply</button>
                 </section>
             </section>
         </section>
         {/* display food */}
-        <section className='grid grid-cols-1 lg:grid-cols-4 gap-6 pt-4 md:grid-cols-2'>
+        <section className='grid grid-cols-1 lg:grid-cols-4 gap-6 pt-4 min-[390px]:grid-cols-2 md:grid-cols-3'>
             {
                 food.map((item , index) => {
                     return(
