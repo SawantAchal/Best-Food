@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import {data} from '../data'
+import { Link } from 'react-router-dom';
 
 const Food = () => {
     const [food , setFood] = useState(data)
@@ -96,15 +97,17 @@ const Food = () => {
             {
                 food.map((item , index) => {
                     return(
-                        <section key={index} className='border shadow-lg hover:scale-105 duration-300 rounded-lg'>
-                            <img src={item.image} alt={item.name} className='w-full h-[200px] object-cover rounded-t-lg'/>
-                            <section className='flex justify-between px-2 py-4 '>
-                                <p className='font-bold'>{item.name}</p>
-                                {/* <p>{item.category}</p>
-                                <p>{item.type}</p> */}
-                                <p className=''><span className='bg-orange-500 text-white p-1 rounded-full'>{item.prices}</span></p>
+                        <Link to={`/foodDisplay/${item.id}`} key={index}>
+                            <section key={index} className='border shadow-lg hover:scale-105 duration-300 rounded-lg'>
+                                <img src={item.image} alt={item.name} className='w-full h-[200px] object-cover rounded-t-lg'/>
+                                <section className='flex justify-between px-2 py-4 '>
+                                    <p className='font-bold'>{item.name}</p>
+                                    {/* <p>{item.category}</p>
+                                    <p>{item.type}</p> */}
+                                    <p className=''><span className='bg-orange-500 text-white p-1 rounded-full'>{item.prices}</span></p>
+                                </section>
                             </section>
-                        </section>
+                        </Link>
                     )
                 })
             }
